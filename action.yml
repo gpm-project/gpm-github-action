@@ -1,0 +1,25 @@
+name: 'GPM action'
+description: 'Compile and push new protos'
+inputs:
+  debug:  # id of input
+    description: 'Whether debug information must be shown'
+    required: true
+    default: 'false'
+  skipPublish:
+    description: 'Whether the action will skip publishing the protos and only compiles them'
+    required: true
+    default: 'false'
+  accessToken:
+    description: 'A personal access token used for pulling private repos from GitHub'
+    required: false
+    default: ''
+outputs:
+  time: # id of output
+    description: 'The time the action was executed'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.debug }}
+    - ${{ inputs.skipPublish }}
+    - ${{ inputs.accessToken }}
