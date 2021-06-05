@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: GPM
-        uses:  gpm-project/gpm-github-action@v0.0.3
+        uses:  gpm-project/gpm-github-action@v0.0.4
         id: gpm
         with:
           debug: 'false'
